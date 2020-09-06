@@ -1,10 +1,10 @@
 let API_KEY = "56bbdc057c384409ab463d48f7925411";
 
-let html, tagAAtiva = $('a.active');
+let html, categoriaAtiva = $('li.active');
 
 deactiveCategoriaAtiva = () => {
-	if(tagAAtiva != undefined) {
-		$(tagAAtiva).attr('class', 'category deactive');
+	if(categoriaAtiva != undefined) {
+		$(categoriaAtiva).attr('class', 'nav-item');
 	}
 }
 
@@ -16,13 +16,13 @@ showContent = (obj) => {
 		<%for (let i in obj.articles) {%>
 			<div class="item radius5">
 				<%if(obj.articles[i].urlToImage != null){%>
-					<p><img class="radius5" src="<%=obj.articles[i].urlToImage%>" title="" alt="Imagem não pode ser exibida"></p><br>
+					<p><img class="radius5" src="<%=obj.articles[i].urlToImage%>" title="" alt="Imagem não pode ser exibida"></p>
 				<%} else {%>
 					<img src="assets/img/svg/sem_img.svg" alt="Card image cap">
 				<%}%>
-				<p style="color: #4c4e4d;"><strong><%=obj.articles[i].source.name%></strong></p><br>
-				<p style="color: #cc0000;"><strong><em><%=obj.articles[i].publishedAt%></em></strong></p><br>
-				<p><a href="<%=obj.articles[i].url%>" target="_blank"><h3><%=obj.articles[i].title%></h3></a></p><br>
+				<p style="color: #4c4e4d;"><strong><%=obj.articles[i].source.name%></strong></p>
+				<p style="color: #cc0000;"><strong><em><%=obj.articles[i].publishedAt%></em></strong></p>
+				<p><a href="<%=obj.articles[i].url%>" target="_blank"><h5><%=obj.articles[i].title%></h5></a></p>
 				<%if(obj.articles[i].content != "" || obj.articles[i].content != null){%>
 					<p style="font-weight: bold;"><%=obj.articles[i].content%></p>
 				<%} else if(obj.articles[i].description != "" || obj.articles[i].description != null){%>
@@ -65,50 +65,50 @@ searchNews = (assunto) => {
 $(() => {
 	loadNews('general');
 
-	$(".nav-items").on("click", "a", function (event) {
+	$("#op").on("click", "a", function (event) {
 		let href = $(this).attr('href');
 		switch (href) {
 			case '#general':
 				loadNews('general');
 				deactiveCategoriaAtiva();
-				$(this).attr('class', 'category active');
-				tagAAtiva = $('a.active');
+				$(this).parent().attr('class', 'nav-item active');
+				categoriaAtiva = $('li.active');
 				break;
 			case '#business':
 				loadNews('business');
 				deactiveCategoriaAtiva();
-				$(this).attr('class', 'category active');
-				tagAAtiva = $('a.active');
+				$(this).parent().attr('class', 'nav-item active');
+				categoriaAtiva = $('li.active');
 				break;
 			case '#entertainment':
 				loadNews('entertainment');
 				deactiveCategoriaAtiva();
-				$(this).attr('class', 'category active');
-				tagAAtiva = $('a.active');
+				$(this).parent().attr('class', 'nav-item active');
+				categoriaAtiva = $('li.active');
 				break;
 			case '#health':
 				loadNews('health');
 				deactiveCategoriaAtiva();
-				$(this).attr('class', 'category active');
-				tagAAtiva = $('a.active');
+				$(this).parent().attr('class', 'nav-item active');
+				categoriaAtiva = $('li.active');
 				break;
 			case '#science':
 				loadNews('science');
 				deactiveCategoriaAtiva();
-				$(this).attr('class', 'category active');
-				tagAAtiva = $('a.active');
+				$(this).parent().attr('class', 'nav-item active');
+				categoriaAtiva = $('li.active');
 				break;
 			case '#sports':
 				loadNews('sports');
 				deactiveCategoriaAtiva();
-				$(this).attr('class', 'category active');
-				tagAAtiva = $('a.active');
+				$(this).parent().attr('class', 'nav-item active');
+				categoriaAtiva = $('li.active');
 				break;
 			case '#technology':
 				loadNews('technology');
 				deactiveCategoriaAtiva();
-				$(this).attr('class', 'category active');
-				tagAAtiva = $('a.active');
+				$(this).parent().attr('class', 'nav-item active');
+				categoriaAtiva = $('li.active');
 				break;
 		}
 	});
@@ -116,8 +116,8 @@ $(() => {
 	document.querySelector('form').addEventListener('submit', event => {
 		event.preventDefault();
 		deactiveCategoriaAtiva();
-		tagAAtiva = undefined;
-		searchNews($('#search-data').val());
+		categoriaAtiva = undefined;
+		searchNews($('#search').val());
 	});
 
 });
