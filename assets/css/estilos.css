@@ -7,7 +7,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 body{
-  background: #f2f2f2;
+  background: #f2fef9;
 }
 nav{
   background: #171c24;
@@ -96,7 +96,7 @@ nav .search-icon{
 .item {
   border-width: 1px;
   border-style: solid;
-  border-color: #00f;
+  border-color: black;
 	padding: 10px;
 }
 
