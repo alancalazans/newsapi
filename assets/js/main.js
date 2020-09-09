@@ -69,42 +69,49 @@ $(() => {
 		let href = $(this).attr('href');
 		switch (href) {
 			case '#general':
+				$('html,body').scrollTop(0);
 				loadNews('general');
 				deactiveCategoriaAtiva();
 				$(this).parent().attr('class', 'nav-item active');
 				categoriaAtiva = $('li.active');
 				break;
 			case '#business':
+				$('html,body').scrollTop(0);
 				loadNews('business');
 				deactiveCategoriaAtiva();
 				$(this).parent().attr('class', 'nav-item active');
 				categoriaAtiva = $('li.active');
 				break;
 			case '#entertainment':
+				$('html,body').scrollTop(0);
 				loadNews('entertainment');
 				deactiveCategoriaAtiva();
 				$(this).parent().attr('class', 'nav-item active');
 				categoriaAtiva = $('li.active');
 				break;
 			case '#health':
+				$('html,body').scrollTop(0);
 				loadNews('health');
 				deactiveCategoriaAtiva();
 				$(this).parent().attr('class', 'nav-item active');
 				categoriaAtiva = $('li.active');
 				break;
 			case '#science':
+				$('html,body').scrollTop(0);
 				loadNews('science');
 				deactiveCategoriaAtiva();
 				$(this).parent().attr('class', 'nav-item active');
 				categoriaAtiva = $('li.active');
 				break;
 			case '#sports':
+				$('html,body').scrollTop(0);
 				loadNews('sports');
 				deactiveCategoriaAtiva();
 				$(this).parent().attr('class', 'nav-item active');
 				categoriaAtiva = $('li.active');
 				break;
 			case '#technology':
+				$('html,body').scrollTop(0);
 				loadNews('technology');
 				deactiveCategoriaAtiva();
 				$(this).parent().attr('class', 'nav-item active');
@@ -115,6 +122,7 @@ $(() => {
 
 	document.querySelector('form').addEventListener('submit', event => {
 		event.preventDefault();
+		$('html,body').scrollTop(0);
 		deactiveCategoriaAtiva();
 		categoriaAtiva = undefined;
 		searchNews($('#search').val());
