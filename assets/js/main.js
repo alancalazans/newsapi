@@ -1,6 +1,7 @@
-let API_KEY = "56bbdc057c384409ab463d48f7925411";
-
-let html, categoriaAtiva = $('li.active');
+let API_KEY = "56bbdc057c384409ab463d48f7925411",
+    html,
+    url,
+    categoriaAtiva = $('li.active');
 
 deactiveCategoriaAtiva = () => {
 	if(categoriaAtiva != undefined) {
@@ -36,7 +37,7 @@ showContent = (obj) => {
 }
 
 loadNews = (category) => {
-	let url = `assets/php/categoryNewsApi.php?category=${category}`;
+	url = `assets/php/categoryNewsApi.php?category=${category}`;
 
 	fetch(url)
 	.then(res => res.json())
@@ -47,9 +48,10 @@ loadNews = (category) => {
 	});
 }
 
-searchNews = (assunto) => {
-	let url = 'assets/php/searchNewsApi.php';
-	fetch(url, {
+searchNews = async (assunto) => {
+	url = 'assets/php/searchNewsApi.php';
+	
+	await fetch(url, {
 		method: 'post',
 		headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" },
 		body: `assunto=${assunto}`
