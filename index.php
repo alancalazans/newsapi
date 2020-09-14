@@ -59,7 +59,7 @@
 
 	<div id="container" class="radius5"></div>
 
-	<script src="assets/js/main.js"></script>
+	<script src="assets/js/main.min.js"></script>
 	<script src="assets/lib/bootstrap/js/popper.min.js"></script>
 	<script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 
