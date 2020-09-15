@@ -28,30 +28,30 @@
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul id="op" class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="#general">Geral <span class="sr-only">(atual)</span></a>
+						<a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#general">Geral <span class="sr-only">(atual)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#business">Negócios</a>
+						<a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#business">Negócios</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#entertainment">Entretenimento</a>
+						<a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#entertainment">Entretenimento</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#health">Saúde</a>
+						<a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#health">Saúde</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#science">Ciência</a>
+						<a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#science">Ciência</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#sports">Esportes</a>
+						<a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#sports">Esportes</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#technology">Tecnologia</a>
+						<a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#technology">Tecnologia</a>
 					</li>
 				</ul>
 				<form class="form-inline mt-2 mt-md-0">
 					<input id="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img src="assets/img/svg/search.svg" width="30" height="30" title="search" alt="search"></button>
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit" data-toggle="collapse" data-target=".navbar-collapse"><img src="assets/img/svg/search.svg" width="30" height="30" title="search" alt="search"></button>
 				</form>
 			</div>
 		</nav>
@@ -59,7 +59,7 @@
 
 	<div id="container" class="radius5"></div>
 
-	<script src="assets/js/main.min.js"></script>
+	<script src="assets/js/main.js"></script>
 	<script src="assets/lib/bootstrap/js/popper.min.js"></script>
 	<script src="assets/lib/bootstrap/js/bootstrap.min.js"></script>
 
