@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-	<meta charset="utf-8">
-	<title>Notícias</title>
-	<meta name="author" content="">
-	<meta name="description" content="">
+	<meta charset="UTF-8">
+	<title>Notícias - News API do Google</title>
+	<meta name="description" content="Últimas notícias do Brasil e do mundo.">
+	<link rel="canonical" href="https://feedsnewsapi.herokuapp.com/">
+	<meta name="author" content="Alan calazans">
+	<meta name="robots" content="index, nofollow">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="shortcut icon" href="assets/img/svg/rss.svg">
+	<link rel="icon" href="assets/img/svg/rss.svg">
 
 	<link rel="stylesheet" href="assets/lib/bootstrap/css/bootstrap.min.css" />
 	<!-- Estilos customizados para esse template -->
