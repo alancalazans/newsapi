@@ -36,28 +36,32 @@ showContent = (obj) => {
 
 }
 
-loadNews = (category) => {
+const loadNews = async (category) => {
 	url = `https://newsapi.org/v2/top-headlines?country=br&category=${category}&apiKey=${API_KEY}`;
 
-	fetch(url)
-		.then(res => res.json())
-		.then(json => showContent(json))
-		.catch(err => {
-			// trata se alguma das promises falhar
-			console.log(err.message);
-		});
+	try {
+		let response = await axios.get(url)
+
+		showContent(response.data)
+	}
+	catch(error) {
+		// trata se alguma das promises falhar
+		console.log(error.message);
+	}
 }
 
-searchNews = async (assunto) => {
+const searchNews = async (assunto) => {
 	url = `https://newsapi.org/v2/everything?q=${assunto}&apiKey=${API_KEY}`;
 	
-	fetch(url)
-		.then(res => res.json())
-		.then(json => showContent(json))
-		.catch(err => {
-			// trata se alguma das promises falhar
-			console.log(err.message);
-		});
+	try {
+		let response = await axios.get(url)
+
+		showContent(response.data)
+	}
+	catch(error) {
+		// trata se alguma das promises falhar
+		console.log(error.message);
+	}
 }
 
 $(() => {
