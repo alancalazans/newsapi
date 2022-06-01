@@ -37,31 +37,27 @@ showContent = (obj) => {
 }
 
 loadNews = (category) => {
-	url = `assets/php/categoryNewsApi.php?category=${category}`;
+	url = `https://newsapi.org/v2/top-headlines?country=br&category=${category}&apiKey=${API_KEY}`;
 
 	fetch(url)
-	.then(res => res.json())
-	.then(json => showContent(json))
-	.catch(err => {
-		// trata se alguma das promises falhar
-		console.log(err.message);
-	});
+		.then(res => res.json())
+		.then(json => showContent(json))
+		.catch(err => {
+			// trata se alguma das promises falhar
+			console.log(err.message);
+		});
 }
 
 searchNews = async (assunto) => {
-	url = 'assets/php/searchNewsApi.php';
+	url = `https://newsapi.org/v2/everything?q=${assunto}&apiKey=${API_KEY}`;
 	
-	await fetch(url, {
-		method: 'post',
-		headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" },
-		body: `assunto=${assunto}`
-	})
-	.then(res => res.json())
-	.then(json => showContent(json))
-	.catch(err => {
-		// trata se alguma das promises falhar
-		console.log(err.message);
-	});
+	fetch(url)
+		.then(res => res.json())
+		.then(json => showContent(json))
+		.catch(err => {
+			// trata se alguma das promises falhar
+			console.log(err.message);
+		});
 }
 
 $(() => {
